@@ -12,24 +12,35 @@ show databases ;
 
 use practice_01 ;
 
+-- 현재 db정보를 조해하기 
+SHOW TABLE STATUS ; 
+
+-- 내부 테이블 조회 
+show tables;
+
+
+-- 특정 테이블의 컬럼 정보를 조회 
+-- DESC 테이블명 ; 
+DESC student ; 
+
+
+
 -- 테이믈 반들기 <CREATE TABLE [테이블명] (필드명 자료형(자릿수), ...... ) ;
 /*
 CREATE TABLE 테이블명(
   필드명1 타입 [NULL | NOT NULL][DEFAULT ][AUTO_INCREMENT],
   필드명2 타입 [NULL | NOT NULL][DEFAULT ][AUTO_INCREMENT],
-  필드명3 타입 [NULL | NOT NULL][DEFAULT ][AUTO_INCREMENT],
   ...
   PRIMARY KEY(필드명)
 );
 */
 
 CREATE TABLE Student(
-	st_number int not null primary key, 
-	name varchar(10) not null,
-    age int not null,
-    email varchar(20)
+	st_number 	INT 		NOT NULL 	PRIMARY KEY, 
+	name	  	VARCHAR(10) NOT NULL,
+    age 	  	INT 		NOT NULL,
+    email 		VARCHAR(20)
     );
-
 -- 테이블 확인  
     
 show tables ;
@@ -84,7 +95,7 @@ DESC STUDENT ;
 ALTER TABLE 테이블명 RENAME 변경이름;
 */
 
-ALTER TABLE STUDENT RENAME STUDENT1;
+ALTER TABLE STUDENT RENAME STUDENT01;
 
 -- 수정 확인
 show tables ;
@@ -92,9 +103,9 @@ show tables ;
 -- 3. 테이블 삭제(DROP) 
 
 /* 
-DROP TABEL 테이블명 ; 
+DROP TABLE 테이블명 ; 
 */
-DROP TABLE STUDENT1 ;
+DROP TABLE STUDENT01 ;
 
 show tables ; 
 
