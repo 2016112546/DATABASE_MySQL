@@ -117,4 +117,33 @@ SELECT [DISTINCT] 컬럼명 [ALIAS]
  WHERE 조건식
 */
 
--- 
+-- 1) 산술 비교 연산자
+
+SELECT first_name, last_name 
+	FROM student
+WHERE age < 5 ;
+
+
+-- 2) 논리 연산자
+SELECT first_name, last_name 
+	FROM student
+WHERE age = 26  ;
+
+
+-- 3) IN 키워드
+SELECT first_name, last_name 
+	FROM student
+WHERE age in (24,25,26) ;
+
+
+-- 4) LIKE 키워드 
+SELECT first_name, last_name 
+	FROM student
+WHERE st_number LIKE '%201611%' ;
+
+
+-- 8. 그룹 함수 ( GROUP BY) 
+
+SELECT AVG(age) , SUM(age)
+	FROM student 
+    GROUP BY first_name  ;
